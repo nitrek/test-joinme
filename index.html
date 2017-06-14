@@ -17,8 +17,8 @@
 		<li><a href="#tabs-2">Guest</a></li>
 		<li><a href="#tabs-3">Mobile</a></li>
 	</ul>
-	<div id="tabs-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-	<div id="tabs-2">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
+	<div id="tabs-1"><div id="host"></div></div>
+	<div id="tabs-2"><div id="guest"></div></div>
 	<div id="tabs-3"><div id="datepicker"></div></div>
 </div>
 
@@ -27,9 +27,64 @@
 <script src="jquery-ui.multidatespicker.js"></script>
 <script>
 $( "#tabs" ).tabs();
-$( "#datepicker" ).multiDatesPicker({
-	maxPicks: 2
+
+var width = window.innerWidth;
+var height = window.innerHeight;
+if (width  > 1500) {
+    $( "#datepicker" ).multiDatesPicker({
+	maxPicks: 10
 });
+$('#host').multiDatesPicker({
+	numberOfMonths: [3,4],
+	maxPicks: 10
+});
+$('#guest').multiDatesPicker({
+	numberOfMonths: [4,3],
+	maxPicks: 10
+});
+
+} 
+else if (width  >800) {
+    $( "#datepicker" ).multiDatesPicker({
+	maxPicks: 10
+});
+$('#host').multiDatesPicker({
+	numberOfMonths: [6,2],
+	maxPicks: 10
+});
+$('#guest').multiDatesPicker({
+	numberOfMonths: [4,3],
+	maxPicks: 10
+});
+
+}
+else if (width  >480) {
+    $( "#datepicker" ).multiDatesPicker({
+	maxPicks: 10
+});
+$('#host').multiDatesPicker({
+	numberOfMonths: [4,3],
+	maxPicks: 10
+});
+$('#guest').multiDatesPicker({
+	numberOfMonths: [4,3],
+	maxPicks: 10
+});
+
+} else {
+    $( "#datepicker" ).multiDatesPicker({
+	maxPicks: 10
+});
+$('#host').multiDatesPicker({
+	//numberOfMonths: [3,4],
+	maxPicks: 10
+});
+$('#guest').multiDatesPicker({
+	//numberOfMonths: [4,3],
+	maxPicks: 10
+});
+
+}
 </script>
 </body>
 </html>
